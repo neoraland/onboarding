@@ -69,7 +69,14 @@ const App = () => {
   ]);
   return (
     <AppState.Provider
-      value={{ activeSlide, setActiveSlide, steps, setSteps, mobileCarousel }}
+      value={{
+        activeSlide,
+        setActiveSlide,
+        steps,
+        setSteps,
+        mobileCarousel,
+        setMobileCarousel,
+      }}
     >
       <div className="text-[#454545] bg-red-000 h-screen flex flex-col">
         <Hero />
