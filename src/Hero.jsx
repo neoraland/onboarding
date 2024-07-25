@@ -5,7 +5,7 @@ const Hero = () => {
         <button className=" absolute top-[15px] left-[15px] bg-white px-3 py-2 rounded-md">
           Back to Neora.com
         </button>
-        <div className="hidden md:block absolute top-[100px] left-[100px] w-full max-w-[400px]">
+        <div className="hidden md:block absolute top-1/2 left-[30%] -translate-x-1/2 -translate-y-1/2 w-full max-w-[500px]">
           <h1 className="font-bold text-4xl mb-2">
             Welcome to the <br></br>Neora Family
           </h1>

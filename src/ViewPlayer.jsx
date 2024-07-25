@@ -21,17 +21,19 @@ const ViewPlayer = ({ video }) => {
     <div
       className={`${
         !mobileCarousel && "rounded-md"
-      } overflow-hidden relative h-full`}
+      } overflow-hidden relative h-full `}
     >
-      <video
-        ref={videoRef}
-        src={steps[activeSlide].video}
-        autoPlay
-        className={`${mobileCarousel && "h-[50vh] m-auto"} object-cover `}
-        onEnded={handleVideoEnd}
-      >
-        Your browser does not support the video tag.
-      </video>
+      <div className="h-full">
+        <video
+          ref={videoRef}
+          src={steps[activeSlide].video}
+          autoPlay
+          className={`${mobileCarousel && "h-[50vh] m-auto"}`}
+          onEnded={handleVideoEnd}
+        >
+          Your browser does not support the video tag.
+        </video>
+      </div>
       {showReplayButton && (
         <button
           onClick={handleReplay}

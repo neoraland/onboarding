@@ -16,7 +16,7 @@ const Carousel = () => {
       <div className="h-full w-full rounded-md bg-zinc-200 flex flex-col overflow-hidden">
         {!mobileCarousel ? (
           <div className="w-full flex justify-between items-center">
-            <div className="w-1/2">
+            <div className="w-1/2 h-[540px] mb-auto p-5">
               <ViewPlayer />
             </div>
             <div className="w-1/2 flex flex-col justify-center items-center gap-3 mb-auto mt-12 text-center">
