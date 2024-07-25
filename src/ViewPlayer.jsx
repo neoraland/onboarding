@@ -4,7 +4,7 @@ import video1 from "../public/videos/video1.mp4";
 import { AppState } from "./App";
 
 const ViewPlayer = ({ video }) => {
-  const { mobileCarousel } = useContext(AppState);
+  const { mobileCarousel, steps, activeSlide } = useContext(AppState);
   const [showReplayButton, setShowReplayButton] = useState(false);
   const videoRef = useRef(null);
 
@@ -25,9 +25,9 @@ const ViewPlayer = ({ video }) => {
     >
       <video
         ref={videoRef}
-        src={video1}
+        src={steps[activeSlide].video}
         autoPlay
-        className={`${mobileCarousel && "h-[50vh] m-auto p-5"} object-cover `}
+        className={`${mobileCarousel && "h-[50vh] m-auto"} object-cover `}
         onEnded={handleVideoEnd}
       >
         Your browser does not support the video tag.

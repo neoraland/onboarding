@@ -6,6 +6,13 @@ import MobileCarousel from "./MobileCarousel";
 import ProgressionBar from "./ProgressionBar";
 export const AppState = createContext();
 
+import video1 from "../public/videos/video1.mp4";
+import video2 from "../public/videos/video2.mp4";
+import video3 from "../public/videos/video3.mp4";
+import video4 from "../public/videos/video4.mp4";
+import video5 from "../public/videos/video5.mp4";
+import video6 from "../public/videos/video6.mp4";
+
 const App = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [mobileCarousel, setMobileCarousel] = useState(false);
@@ -14,6 +21,7 @@ const App = () => {
       id: 0,
       isActive: true,
       title: "Determine Your Why",
+      video: video1,
       description: [
         'Your "why" will help you stay focused and motivated',
         "Write down 3 reasons you started your business and 3 wins youre working towards.",
@@ -24,6 +32,7 @@ const App = () => {
       id: 1,
       isActive: false,
       title: "Earn as You Learn",
+      video: video2,
       description: [
         "Your perks will reflect the effort you put in. Use your mentor and support team to help you along the way and remember - youre the boss - you choose when and where you work.",
         "Define how many hours youre willing to work your business. Block your calendar on specific days and times you will dedicate effort in working your business.",
@@ -33,24 +42,28 @@ const App = () => {
       id: 2,
       isActive: false,
       title: "Slide Title",
+      video: video3,
       description: ["Slide Description"],
     },
     {
       id: 3,
       isActive: false,
       title: "Slide Title",
+      video: video4,
       description: ["Slide Description"],
     },
     {
       id: 4,
       isActive: false,
       title: "Slide Title",
+      video: video5,
       description: ["Slide Description"],
     },
     {
       id: 5,
       isActive: false,
       title: "Slide Title",
+      video: video6,
       description: ["Slide Description"],
     },
   ]);
@@ -70,7 +83,7 @@ const App = () => {
             Get Started
           </button>
         </div>
-        <div className="hidden md:flex flex-col h-full">
+        <div className="hidden md:flex flex-col h-full overflow-hidden">
           <div className="container">
             <div className="flex justify-between"></div>
             <ProgressionBar />

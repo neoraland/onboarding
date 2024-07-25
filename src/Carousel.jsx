@@ -10,10 +10,10 @@ const Carousel = () => {
     <div
       className={`${
         !mobileCarousel && "p-5"
-      } md:h-full flex flex-col container`}
+      } md:h-full flex flex-col container overflow-hidden`}
     >
       {/* screen */}
-      <div className="h-full w-full rounded-md bg-zinc-200 flex flex-col">
+      <div className="h-full w-full rounded-md bg-zinc-200 flex flex-col overflow-hidden">
         <ViewPlayer />
       </div>
       {/* controls */}
