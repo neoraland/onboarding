@@ -2,15 +2,26 @@ import { useContext } from "react";
 import { AppState } from "./App";
 import BackBtn from "./BackBtn";
 import NextBtn from "./NextBtn";
+import ViewPlayer from "./ViewPlayer";
 const Carousel = () => {
-  const { activeSlide } = useContext(AppState);
+  const { activeSlide, mobileCarousel } = useContext(AppState);
 
   return (
-    <div className="h-full p-5 flex flex-col container">
+    <div
+      className={`${
+        !mobileCarousel && "p-5"
+      } md:h-full flex flex-col container`}
+    >
       {/* screen */}
-      <div className="h-full w-full rounded-md bg-zinc-200"></div>
+      <div className="h-full w-full rounded-md bg-zinc-200 flex flex-col">
+        <ViewPlayer />
+      </div>
       {/* controls */}
-      <div className="w-full mt-5 flex justify-between">
+      <div
+        className={`${
+          mobileCarousel && "px-5"
+        } w-full mt-5 flex justify-between mb-5 md:mb-0`}
+      >
         {!activeSlide == 0 && <BackBtn />}
         <NextBtn />
       </div>

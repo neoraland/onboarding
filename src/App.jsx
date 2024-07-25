@@ -2,11 +2,13 @@ import { createContext, useState } from "react";
 import Carousel from "./Carousel";
 import CarouselHeader from "./CarouselHeader";
 import Hero from "./Hero";
+import MobileCarousel from "./MobileCarousel";
 import ProgressionBar from "./ProgressionBar";
 export const AppState = createContext();
 
 const App = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [mobileCarousel, setMobileCarousel] = useState(false);
   const [steps, setSteps] = useState([
     {
       id: 0,
@@ -21,8 +23,11 @@ const App = () => {
     {
       id: 1,
       isActive: false,
-      title: "Slide Title",
-      description: ["Slide Description"],
+      title: "Earn as You Learn",
+      description: [
+        "Your perks will reflect the effort you put in. Use your mentor and support team to help you along the way and remember - youre the boss - you choose when and where you work.",
+        "Define how many hours youre willing to work your business. Block your calendar on specific days and times you will dedicate effort in working your business.",
+      ],
     },
     {
       id: 2,
@@ -50,14 +55,30 @@ const App = () => {
     },
   ]);
   return (
-    <AppState.Provider value={{ activeSlide, setActiveSlide, steps, setSteps }}>
+    <AppState.Provider
+      value={{ activeSlide, setActiveSlide, steps, setSteps, mobileCarousel }}
+    >
       <div className="text-[#454545] bg-red-000 h-screen flex flex-col">
         <Hero />
-        <div className="container">
-          <ProgressionBar />
-          <CarouselHeader />
+        <div className="p-5">
+          <button
+            onClick={() => {
+              setMobileCarousel(true);
+            }}
+            className="md:hidden w-full bg-zinc-700 text-white p-3 rounded-md"
+          >
+            Get Started
+          </button>
         </div>
-        <Carousel />
+        <div className="hidden md:flex flex-col h-full">
+          <div className="container">
+            <div className="flex justify-between"></div>
+            <ProgressionBar />
+            <CarouselHeader />
+          </div>
+          <Carousel />
+        </div>
+        {mobileCarousel && <MobileCarousel />}
       </div>
     </AppState.Provider>
   );

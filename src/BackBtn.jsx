@@ -20,7 +20,7 @@ const BackBtn = () => {
   return (
     <button
       onClick={handleBack}
-      className="rounded-md p-2 lg:p-3  bg-zinc-100  min-w-[100px] text-sm"
+      className="rounded-md p-2 md:p-3  bg-zinc-100  min-w-[100px] text-sm"
     >
       Back
     </button>

@@ -1,7 +1,10 @@
-import { useRef, useState } from "react";
-import video1 from "./videos/video1.mp4";
+import { useContext, useRef, useState } from "react";
+import { MdOutlineReplay } from "react-icons/md";
+import video1 from "../public/videos/video1.mp4";
+import { AppState } from "./App";
 
 const ViewPlayer = ({ video }) => {
+  const { mobileCarousel } = useContext(AppState);
   const [showReplayButton, setShowReplayButton] = useState(false);
   const videoRef = useRef(null);
 
@@ -15,12 +18,16 @@ const ViewPlayer = ({ video }) => {
   };
 
   return (
-    <div>
+    <div
+      className={`${
+        !mobileCarousel && "rounded-md"
+      } overflow-hidden relative h-full`}
+    >
       <video
         ref={videoRef}
         src={video1}
         autoPlay
-        className="w-full h-auto max-w-["
+        className="object-cover"
         onEnded={handleVideoEnd}
       >
         Your browser does not support the video tag.
@@ -28,9 +35,9 @@ const ViewPlayer = ({ video }) => {
       {showReplayButton && (
         <button
           onClick={handleReplay}
-          className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
+          className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 mt-4 px-4 py-2 bg-zinc-800 text-3xl text-white rounded"
         >
-          Play Again
+          <MdOutlineReplay />
         </button>
       )}
     </div>
