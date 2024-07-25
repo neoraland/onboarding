@@ -1,9 +1,8 @@
 import { useContext, useRef, useState } from "react";
 import { MdOutlineReplay } from "react-icons/md";
-import video1 from "../public/videos/video1.mp4";
 import { AppState } from "./App";
 
-const ViewPlayer = ({ video }) => {
+const ViewPlayer = () => {
   const { mobileCarousel, steps, activeSlide } = useContext(AppState);
   const [showReplayButton, setShowReplayButton] = useState(false);
   const videoRef = useRef(null);
@@ -30,6 +29,7 @@ const ViewPlayer = ({ video }) => {
           autoPlay
           className={`${mobileCarousel && "h-[50vh] m-auto"}`}
           onEnded={handleVideoEnd}
+          playsInline
         >
           Your browser does not support the video tag.
         </video>
