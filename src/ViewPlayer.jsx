@@ -27,7 +27,7 @@ const ViewPlayer = ({ video }) => {
         ref={videoRef}
         src={video1}
         autoPlay
-        className="object-cover"
+        className={`${mobileCarousel && "h-[50vh] m-auto p-5"} object-cover `}
         onEnded={handleVideoEnd}
       >
         Your browser does not support the video tag.
